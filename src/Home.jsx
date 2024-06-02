@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Button from 'react-bootstrap/Button';
-
+import {Link } from 'react-router-dom'
 const Home = () => {
 
     const users = useSelector((state) => state.users)
@@ -28,8 +28,8 @@ const Home = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    <Button>Edit</Button>
-                                    <Button>Delete</Button>
+                                    <Button className="btn btn-sucess mx-1">Edit</Button>
+                                    <Button className="btn btn-failed mx-1">Delete</Button>
                                 </td>
                             </tr>
 
