@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Button from 'react-bootstrap/Button';
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 const Home = () => {
 
     const users = useSelector((state) => state.users)
@@ -10,7 +11,7 @@ const Home = () => {
     return (
         <div className="container">
             <h2>Crud App with JSON Server   </h2>
-            <Button className="btn btn-sucess my-3">Create +</Button>
+            <Link to="/create"><Button className="btn btn-sucess my-3">Create +</Button></Link>
             <table className="table">
                 <thead>
                     <tr>
@@ -28,8 +29,8 @@ const Home = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    <Button className="btn btn-sucess mx-1">Edit</Button>
-                                    <Button className="btn btn-failed mx-1">Delete</Button>
+                                    <Link to={`/update/${user.id}`}><Button className="btn btn-sucess mx-1">Edit</Button></Link>
+                                    <Link to={`/update/${user.id}`}><Button className="btn btn-danger mx-1">Delete</Button></Link>                                   
                                 </td>
                             </tr>
 
